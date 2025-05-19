@@ -3,17 +3,17 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main 
+      - main  # Set this to your default branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      -name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      -name: Deploy to Github Pages
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-      folder: .
-      branch: gh-pages
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: .  # The folder the action should deploy
+          branch: gh-pages  # The branch the action should deploy to
